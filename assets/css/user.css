@@ -1,0 +1,237 @@
+/* User Courses & Materials Page */
+.admin-main {
+    padding: 2rem 0;
+    flex: 1;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.page-title {
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--primary);
+    font-size: 1.75rem;
+}
+
+/* Course Selection Section */
+.course-selection {
+    margin-bottom: 3rem;
+}
+
+.course-selection h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.course-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--dark);
+    overflow: hidden;
+    border: 1px solid var(--light-gray);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card.active {
+    border: 2px solid var(--primary);
+}
+
+.course-card-header {
+    background: var(--primary);
+    color: white;
+    padding: 1.25rem;
+}
+
+.course-card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.course-card-body {
+    padding: 1.25rem;
+}
+
+.course-card-body p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+/* Materials Section */
+.materials-section {
+    margin-top: 3rem;
+}
+
+.materials-section h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.materials-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--light-gray);
+}
+
+.material-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.material-info h3 {
+    margin: 0 0 0.5rem;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.material-description {
+    color: var(--gray);
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.material-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.75rem;
+}
+
+.material-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--success);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.download-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Instruction Box */
+.instruction-box {
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    border: 1px solid var(--light-gray);
+    color: var(--gray);
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert-info {
+    background-color: #f0f9ff;
+    color: #0369a1;
+    border-left: 4px solid #0ea5e9;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .material-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .download-btn {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 0 1rem;
+    }
+    
+    .material-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
